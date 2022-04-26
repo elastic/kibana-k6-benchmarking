@@ -37,6 +37,6 @@ const authBody = {
 export default () => {
   const res = http.post(loginUrl, JSON.stringify(authBody), {headers: authHeaders});
   check(res, {
-    'status is 200': () => res.status === 400,
+    'status is 200': () => res.status === 200,
   });
 };
