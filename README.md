@@ -7,5 +7,7 @@ Space time benchmarking project with k6 tool
 
 ## Running tests
  - Make sure Kibana is running
- - Transpile typescript code into JS and bundle the project: `yarn webpack`
- - Run your test e.g. `k6 run dist/login-test.js`
+ - Install dependencies and transpile typescript code into JS and bundle the project: `yarn install && yarn webpack`
+ - Run your test:
+    - using kibana.json in assets folder: `k6 run -e USE_KIBANA_JSON=1 dist/login_test.js`
+    - by passing values directly: `k6 run -e KIBANA_USER=elastic KIBANA_PASSWORD=changeme KIBANA_URL="http://localhost:5620" KIBANA_VERSION=8.3.0 dist/login_test.js`
