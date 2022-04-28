@@ -8,7 +8,7 @@ export const checkStatus = (response: RefinedResponse<ResponseType | undefined>,
   check(response, {[message]: () => response.status === status});
 }
 
-const readEnvAndWarn = (envName: string) => {
+const readMandatoryEnvVar = (envName: string) => {
   const value = __ENV[envName];
   if (!value) {
     throw Error(`Set '${envName}' env var`);
@@ -21,10 +21,10 @@ export const getAuth = () => {
     return kibanaJson;
   }
   return {
-    baseUrl: readEnvAndWarn('KIBANA_URL'), 
-    username: readEnvAndWarn('KIBANA_USERNAME'),
-    password: readEnvAndWarn('KIBANA_PASSWORD'),
-    version: readEnvAndWarn('KIBANA_VERSION')
+    baseUrl: readMandatoryEnvVar('KIBANA_URL'), 
+    username: readMandatoryEnvVar('KIBANA_USERNAME'),
+    password: readMandatoryEnvVar('KIBANA_PASSWORD'),
+    version: readMandatoryEnvVar('KIBANA_VERSION')
   }
 }
 

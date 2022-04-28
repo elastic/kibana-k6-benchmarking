@@ -70,7 +70,6 @@ export default () => {
   checkStatus(lensFieldsRes, 200, `POST '${lensExistingFieldsUrl}/${indexPatternId}' passed`);
 
   const sessionId = uuidv4();
-  console.log(sessionId);
   const bsearchBody =
   `{
     "batch":[
