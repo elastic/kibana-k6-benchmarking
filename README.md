@@ -20,6 +20,7 @@ Space time benchmarking project with k6 tool
 ## Running tests directly with k6
 
  - Ensure that Vault is properly setup
+ - Ensure that Go 1.17 or better is installed and `GOPATH` is on your path (add `export PATH=$PATH:$(go env GOPATH)/bin` to `~/.profile` or `~/.zprofile`).
  - Run your test:
     - Running all load tests: `./k6.sh`
     - Running only a specific test: `./k6.sh login_test`. Note that the test name must be passed without any file extension (i.e. pass `login_test` but not `login_test.ts`).
